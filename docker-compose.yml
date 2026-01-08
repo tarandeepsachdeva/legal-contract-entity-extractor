@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Doccano Annotation Platform
+  doccano:
+    image: doccano/doccano
+    container_name: doccano-server
+    ports:
+      - "8000:8000"
+    environment:
+      - ADMIN_USERNAME=admin
+      - ADMIN_EMAIL=admin@example.com
+      - ADMIN_PASSWORD=password
+    volumes:
+      - doccano_data:/doccano
+    restart: unless-stopped
+
+  # NER API Service
+  legal-ner-api:
+    build: .
+    container_name: legal-ner-api
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - FLASK_ENV=production
+    restart: unless-stopped
+    depends_on:
+      - doccano
+
+volumes:
+  doccano_data:
