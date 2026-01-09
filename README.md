@@ -332,6 +332,224 @@ For issues:
 2. Review logs in `logs/` directory
 3. Create GitHub issue with details
 
+## 🚀 Complete Pipeline: From Start to End
+
+### **Step 0: Prerequisites & Setup**
+```bash
+# 1. Install system dependencies
+# Windows
+choco install poppler tesseract
+# macOS
+brew install poppler tesseract
+# Ubuntu
+sudo apt-get install poppler-utils tesseract-ocr
+
+# 2. Set up Python environment
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+# 3. Start Docker Desktop (required for containers)
+# Open Docker Desktop application
+```
+
+### **Step 1: Start Services**
+```bash
+# Start all services with docker-compose
+docker-compose up -d
+
+# Verify services are running
+docker ps
+# Should show: doccano-server and legal-ner-api
+```
+
+### **Step 2: Extract Text from PDFs**
+```bash
+# Digital PDF
+python clean_pdf_entities.py "data/raw pdfs/Digital/example.pdf"
+
+# Scanned PDF (with OCR)
+python clean_pdf_entities.py "data/raw pdfs/Scanned/example.pdf"
+
+# Output: example_entities.json with extracted entities
+```
+
+### **Step 3: Annotate with Doccano**
+```bash
+# 1. Access Doccano web interface
+open http://localhost:8000
+# Login: admin / password
+
+# 2. Create new project
+# Project Name: "Legal NER Training"
+# Entity Types: PARTY, EFFECTIVE_DATE, AMOUNT, DURATION, LOCATION, AGREEMENT_TYPE
+
+# 3. Import text data
+# Upload extracted text from Step 2
+# Or upload raw PDF documents
+
+# 4. Annotate entities
+# Select text, highlight entities, choose labels
+# Aim for 100-200 annotated documents
+
+# 5. Export annotations
+# Format: JSONL
+# Download to: data/annotation/NER/Doccano/
+```
+
+### **Step 4: Convert to spaCy Format**
+```bash
+# Convert Doccano annotations to spaCy training format
+python src/annotations/convert_doccano_to_spacy.py \
+  --input data/annotation/NER/Doccano/annotated.jsonl \
+  --output data/annotation/NER/spacy/training_data.spacy
+
+# Split into train/validation (if not already split)
+# train.spacy - 70% of data
+# val.spacy - 30% of data
+```
+
+### **Step 5: Train ML Model**
+```bash
+# Train the spaCy NER model
+python train_config.py
+
+# Output:
+# - training_output/best_model/ (best performing model)
+# - training_output/config_model/ (final model)
+# - Training logs with F1 scores
+```
+
+### **Step 6: Start API with Trained Model**
+```bash
+# Stop existing container
+docker stop legal-ner-api
+
+# Rebuild with new model
+docker build -t legal-ner-api .
+
+# Start with trained model
+docker run -p 5001:5001 --name legal-ner-api -d legal-ner-api
+
+# Verify API is working
+curl http://localhost:5001/health
+```
+
+### **Step 7: Test Complete Pipeline**
+```bash
+# Test with new PDF
+python clean_pdf_entities.py "data/raw pdfs/test_document.pdf"
+
+# Should show:
+# ✅ API is running
+# ✅ Extracted X entities
+# ✅ Results saved to test_document_entities.json
+```
+
+### **Step 8: Generate Performance Visualizations**
+```bash
+# Create training and performance graphs
+python visualize_training_results.py
+
+# Output:
+# - training_curves.png (training progress)
+# - ml_vs_hybrid_comparison.png (ML vs Hybrid)
+# - performance_summary.png (overall metrics)
+# - entity_distribution.png (entity breakdown)
+```
+
+## 📊 Expected Results
+
+### **After Step 2:** PDF Text Extraction
+- **Digital PDFs:** High quality text extraction
+- **Scanned PDFs:** OCR-based extraction with good accuracy
+- **Output:** JSON files with raw entities
+
+### **After Step 3:** Doccano Annotations
+- **Annotations:** 100-200 labeled documents
+- **Entity Types:** PARTY, EFFECTIVE_DATE, AMOUNT, DURATION, LOCATION, AGREEMENT_TYPE
+- **Quality:** Human-verified training data
+
+### **After Step 5:** Trained Model
+- **F1 Score:** ~0.3 (your current model)
+- **Best Model:** Saved in `training_output/best_model/`
+- **Training Logs:** Detailed progress tracking
+
+### **After Step 7:** Working Pipeline
+- **API Endpoint:** http://localhost:5001/extract
+- **Hybrid Model:** ML + Rule-based extraction
+- **Performance:** ~86% precision, ~77% recall
+
+### **After Step 8:** Visualizations
+- **Training Curves:** Show model improvement over epochs
+- **Performance Comparison:** ML vs Hybrid benefits
+- **Summary Statistics:** Quantified improvements
+
+## 🎯 Complete Workflow Summary
+
+```
+PDF Documents → Text Extraction → Doccano Annotation → spaCy Conversion → Model Training → API Deployment → Testing & Visualization
+```
+
+## ⚡ Quick Start Commands
+
+```bash
+# 1. Setup
+git clone https://github.com/tarandeepsachdeva/legal-contract-entity-extractor.git
+cd legal-contract-entity-extractor
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+# 2. Start services
+docker-compose up -d
+
+# 3. Full pipeline
+python clean_pdf_entities.py "data/raw pdfs/Digital/example.pdf"
+# Annotate in Doccano (http://localhost:8000)
+python src/annotations/convert_doccano_to_spacy.py --input annotated.jsonl --output training_data.spacy
+python train_config.py
+python visualize_training_results.py
+
+# 4. Test
+python clean_pdf_entities.py "new_document.pdf"
+```
+
+## 🆘 Troubleshooting Complete Pipeline
+
+### **Services Not Starting:**
+```bash
+# Check Docker
+docker ps -a
+docker logs doccano-server
+docker logs legal-ner-api
+
+# Restart if needed
+docker-compose restart
+```
+
+### **Model Training Issues:**
+```bash
+# Check data format
+python -c "import spacy; db = spacy.tokens.DocBin().from_disk('data/annotation/NER/spacy/train.spacy'); print(f'Docs: {len(list(db.get_docs(spacy.blank(\"en\").vocab)))}')"
+
+# Check training logs
+ls training_output/
+cat training_output/training_log.json  # if exists
+```
+
+### **API Not Working:**
+```bash
+# Check health
+curl http://localhost:5001/health
+
+# Check logs
+docker logs legal-ner-api
+
+# Test extraction
+curl -X POST http://localhost:5001/extract -H "Content-Type: application/json" -d '{"text": "Test document between ABC Corp and John Doe for $100,000."}'
+```
+
 ---
 
-**Quick Start:** Run `./setup.sh` for automated setup and testing.
+**🎉 This complete guide takes you from zero to a fully functional Legal Contract Entity Extraction system!**

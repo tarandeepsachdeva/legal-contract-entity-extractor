@@ -1,0 +1,12 @@
+{
+  "training_epochs": 80,
+  "best_f1_score": 0.31438203035881873,
+  "final_f1_score": 0.24974431222724286,
+  "ml_avg_precision": 0.6700000000000002,
+  "hybrid_avg_precision": 0.8619999999999999,
+  "ml_avg_recall": 0.5700000000000001,
+  "hybrid_avg_recall": 0.77,
+  "improvement_precision": 28.65671641791041,
+  "improvement_recall": 35.08771929824561,
+  "improvement_f1": 32.258064516129025
+}
