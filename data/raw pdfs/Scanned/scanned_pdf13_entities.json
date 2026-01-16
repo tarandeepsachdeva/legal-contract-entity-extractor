@@ -1,0 +1,12 @@
+{
+  "source_file": "data/raw pdfs/Scanned/scanned_pdf13.pdf",
+  "total_entities": 0,
+  "raw_entities_count": 1,
+  "removed_entities_count": 1,
+  "entity_types": [],
+  "entities": [],
+  "processing_method": "hybrid_with_cleaning",
+  "processing_time": 0.001955,
+  "success": true,
+  "timestamp": "2026-01-07T15:52:56.304421"
+}

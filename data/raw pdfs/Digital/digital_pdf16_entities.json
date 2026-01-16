@@ -1,0 +1,430 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf16.pdf",
+  "total_entities": 103,
+  "entity_types": [
+    "EFFECTIVE_DATE",
+    "PARTY",
+    "AGREEMENT_TYPE",
+    "AMOUNT",
+    "LOCATION",
+    "DURATION"
+  ],
+  "entities": [
+    [
+      "November 1,",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$1",
+      "AMOUNT"
+    ],
+    [
+      "October 31, 2004",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$1 billion",
+      "AMOUNT"
+    ],
+    [
+      "$2 billion",
+      "AMOUNT"
+    ],
+    [
+      "$2",
+      "AMOUNT"
+    ],
+    [
+      "November 1, 2003",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "October 31, 2004 and",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "as of November 1, 2003",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "MANAGEMENT AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "This Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "the Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "its prospectus",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "and statement of additional information",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "and statement of \n     additional information",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "MANAGEMENT ADVISORS, INC",
+      "LOCATION"
+    ],
+    [
+      "covenants herein, the",
+      "LOCATION"
+    ],
+    [
+      "set forth, subject",
+      "LOCATION"
+    ],
+    [
+      "management obligations, the",
+      "LOCATION"
+    ],
+    [
+      "such economic, statistical",
+      "LOCATION"
+    ],
+    [
+      "office space, supplies",
+      "LOCATION"
+    ],
+    [
+      "public authorities, but",
+      "LOCATION"
+    ],
+    [
+      "to \n     custodial, transfer",
+      "LOCATION"
+    ],
+    [
+      "agency services, determination",
+      "LOCATION"
+    ],
+    [
+      "as amended, and",
+      "LOCATION"
+    ],
+    [
+      "are directors, officers",
+      "LOCATION"
+    ],
+    [
+      "are \n     sold, the",
+      "LOCATION"
+    ],
+    [
+      "include brokerage, interest",
+      "LOCATION"
+    ],
+    [
+      "taxes, \n     deferred",
+      "LOCATION"
+    ],
+    [
+      "organization expenses, Rule",
+      "LOCATION"
+    ],
+    [
+      "distribution fees, service",
+      "LOCATION"
+    ],
+    [
+      "extraordinary expenses, if",
+      "LOCATION"
+    ],
+    [
+      "its execution, and",
+      "LOCATION"
+    ],
+    [
+      "otherwise terminated, shall",
+      "LOCATION"
+    ],
+    [
+      "the Agreement, the",
+      "LOCATION"
+    ],
+    [
+      "willful misfeasance, bad",
+      "LOCATION"
+    ],
+    [
+      "the Advisor, or",
+      "LOCATION"
+    ],
+    [
+      "duties \n     hereunder, the",
+      "LOCATION"
+    ],
+    [
+      "the Fund, to",
+      "LOCATION"
+    ],
+    [
+      "other \n     person, firm",
+      "LOCATION"
+    ],
+    [
+      "or organization, for",
+      "LOCATION"
+    ],
+    [
+      "course of, or",
+      "LOCATION"
+    ],
+    [
+      "connected with, rendering",
+      "LOCATION"
+    ],
+    [
+      "the Trustees, officers",
+      "LOCATION"
+    ],
+    [
+      "covenants herein, the parties",
+      "LOCATION"
+    ],
+    [
+      "set forth, subject to",
+      "LOCATION"
+    ],
+    [
+      "management obligations, the Advisor",
+      "LOCATION"
+    ],
+    [
+      "such economic, statistical and",
+      "LOCATION"
+    ],
+    [
+      "supplies, facilities and",
+      "LOCATION"
+    ],
+    [
+      "public authorities, but exclusive",
+      "LOCATION"
+    ],
+    [
+      "transfer, dividend and",
+      "LOCATION"
+    ],
+    [
+      "agency services, determination of",
+      "LOCATION"
+    ],
+    [
+      "as amended, and the",
+      "LOCATION"
+    ],
+    [
+      "officers, \n     partners or",
+      "LOCATION"
+    ],
+    [
+      "are \n     sold, the Advisor",
+      "LOCATION"
+    ],
+    [
+      "taxes, \n     deferred organization",
+      "LOCATION"
+    ],
+    [
+      "distribution fees, service fees",
+      "LOCATION"
+    ],
+    [
+      "extraordinary expenses, if any",
+      "LOCATION"
+    ],
+    [
+      "otherwise terminated, shall continue",
+      "LOCATION"
+    ],
+    [
+      "the Agreement, the terms",
+      "LOCATION"
+    ],
+    [
+      "willful misfeasance, bad faith",
+      "LOCATION"
+    ],
+    [
+      "the Advisor, or reckless",
+      "LOCATION"
+    ],
+    [
+      "duties \n     hereunder, the Advisor",
+      "LOCATION"
+    ],
+    [
+      "the Fund, to any",
+      "LOCATION"
+    ],
+    [
+      "other \n     person, firm or",
+      "LOCATION"
+    ],
+    [
+      "organization, for any",
+      "LOCATION"
+    ],
+    [
+      "course of, or \n     connected",
+      "LOCATION"
+    ],
+    [
+      "with, rendering services",
+      "LOCATION"
+    ],
+    [
+      "the Trustees, officers or",
+      "LOCATION"
+    ],
+    [
+      "monthly",
+      "DURATION"
+    ],
+    [
+      "daily",
+      "DURATION"
+    ],
+    [
+      "annually",
+      "DURATION"
+    ],
+    [
+      "of the Fund",
+      "PARTY"
+    ],
+    [
+      "of the Trust",
+      "PARTY"
+    ],
+    [
+      "for the Fund",
+      "PARTY"
+    ],
+    [
+      "of \n     the Trust",
+      "PARTY"
+    ],
+    [
+      "the \n     Investment Company",
+      "PARTY"
+    ],
+    [
+      "The Fund",
+      "PARTY"
+    ],
+    [
+      "to the Trust",
+      "PARTY"
+    ],
+    [
+      "or the Fund",
+      "PARTY"
+    ],
+    [
+      "establishing the Trust",
+      "PARTY"
+    ],
+    [
+      "to COLUMBIA STRATEGIC",
+      "PARTY"
+    ],
+    [
+      "to the \n     supervision",
+      "PARTY"
+    ],
+    [
+      "to the Board",
+      "PARTY"
+    ],
+    [
+      "to \n     be filed",
+      "PARTY"
+    ],
+    [
+      "to \n     custodial",
+      "PARTY"
+    ],
+    [
+      "to render similar",
+      "PARTY"
+    ],
+    [
+      "to others so",
+      "PARTY"
+    ],
+    [
+      "to less than",
+      "PARTY"
+    ],
+    [
+      "to the extent",
+      "PARTY"
+    ],
+    [
+      "to be effective",
+      "PARTY"
+    ],
+    [
+      "to year thereafter",
+      "PARTY"
+    ],
+    [
+      "to the Advisor",
+      "PARTY"
+    ],
+    [
+      "to any liability",
+      "PARTY"
+    ],
+    [
+      "to any shareholder",
+      "PARTY"
+    ],
+    [
+      "to any other",
+      "PARTY"
+    ],
+    [
+      "by Section",
+      "PARTY"
+    ],
+    [
+      "by the excess",
+      "PARTY"
+    ],
+    [
+      "by vote of",
+      "PARTY"
+    ],
+    [
+      "by the Advisor",
+      "PARTY"
+    ],
+    [
+      "by the Securities",
+      "PARTY"
+    ],
+    [
+      "by officers not",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid",
+  "processing_time": 0.05188,
+  "success": true,
+  "timestamp": "2026-01-07T15:33:39.709499"
+}

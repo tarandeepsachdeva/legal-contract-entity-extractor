@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # NER API Service
+  legal-ner-api:
+    build: .
+    container_name: legal-ner-api
+    ports:
+      - "5002:5001"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./training_output:/app/training_output
+    environment:
+      - PYTHONPATH=/app
+      - FLASK_ENV=production
+    restart: unless-stopped
+
+volumes:
+  training_output:

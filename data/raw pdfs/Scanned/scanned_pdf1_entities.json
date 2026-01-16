@@ -1,0 +1,318 @@
+{
+  "source_file": "data/raw pdfs/Scanned/scanned_pdf1.pdf",
+  "total_entities": 75,
+  "raw_entities_count": 141,
+  "removed_entities_count": 66,
+  "entity_types": [
+    "LOCATION",
+    "PARTY",
+    "AGREEMENT_TYPE",
+    "EFFECTIVE_DATE"
+  ],
+  "entities": [
+    [
+      "May 11, 2004",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "May 11, 2006",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "July 11,",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "NEW YORK,",
+      "PARTY"
+    ],
+    [
+      "May 10, 2006",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "July 11, 2006",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "May 11, 2006 until",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "July 11, 2006 and",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "Security Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Credit Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Loan Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "your agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Letter Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "the Commitment",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Commitment",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Capitalized terms",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "such terms",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "the terms",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Englewood Cliffs, NJ",
+      "LOCATION"
+    ],
+    [
+      "liability company, Asta",
+      "PARTY"
+    ],
+    [
+      "liability company, Palisades",
+      "PARTY"
+    ],
+    [
+      "Asta Funding, Inc",
+      "PARTY"
+    ],
+    [
+      "Delaware corporation, Computer",
+      "LOCATION"
+    ],
+    [
+      "Finance, LLC",
+      "PARTY"
+    ],
+    [
+      "com, LLC",
+      "PARTY"
+    ],
+    [
+      "Commercial, LLC",
+      "PARTY"
+    ],
+    [
+      "liability company, Option",
+      "PARTY"
+    ],
+    [
+      "Card, LLC",
+      "PARTY"
+    ],
+    [
+      "liability company, Sylvan",
+      "PARTY"
+    ],
+    [
+      "Recovery Solutions, LLC",
+      "PARTY"
+    ],
+    [
+      "terms, conditions",
+      "PARTY"
+    ],
+    [
+      "covenants, rights",
+      "PARTY"
+    ],
+    [
+      "duties, obligations",
+      "PARTY"
+    ],
+    [
+      "provided below, Guarantors",
+      "LOCATION"
+    ],
+    [
+      "covenants, guaranties",
+      "PARTY"
+    ],
+    [
+      "assurances, promises",
+      "PARTY"
+    ],
+    [
+      "more counterparts, each",
+      "LOCATION"
+    ],
+    [
+      "truly yours, ISRAEL",
+      "LOCATION"
+    ],
+    [
+      "COMPUTER FINANCE, LLC",
+      "PARTY"
+    ],
+    [
+      "ASTA COMMERCIAL, LLC",
+      "PARTY"
+    ],
+    [
+      "OPTION CARD, LLC",
+      "PARTY"
+    ],
+    [
+      "liability company, Asta Funding",
+      "PARTY"
+    ],
+    [
+      "liability company, Palisades Acquisition",
+      "PARTY"
+    ],
+    [
+      "liability company, Palisades Collection",
+      "PARTY"
+    ],
+    [
+      "liability company, and Cliffs",
+      "PARTY"
+    ],
+    [
+      "Delaware corporation, Computer Finance",
+      "PARTY"
+    ],
+    [
+      "liability company, Asta Commercial",
+      "PARTY"
+    ],
+    [
+      "liability company, Option Card",
+      "PARTY"
+    ],
+    [
+      "liability company, Sylvan Acquisition",
+      "PARTY"
+    ],
+    [
+      "liability company, and Vativ",
+      "PARTY"
+    ],
+    [
+      "this letter, the definition",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Termination Date, as set",
+      "LOCATION"
+    ],
+    [
+      "Revolving Loan, and the",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "this letter, all terms",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "provided below, Guarantors and",
+      "LOCATION"
+    ],
+    [
+      "more counterparts, each of",
+      "LOCATION"
+    ],
+    [
+      "truly yours, ISRAEL DISCOUNT",
+      "LOCATION"
+    ],
+    [
+      "NEW YORK, as Agent",
+      "LOCATION"
+    ],
+    [
+      "ACQUISITION II, LLC By",
+      "PARTY"
+    ],
+    [
+      "ACQUISITION IV, LLC By",
+      "PARTY"
+    ],
+    [
+      "COMPUTER FINANCE, LLC By",
+      "PARTY"
+    ],
+    [
+      "ASTA COMMERCIAL, LLC By",
+      "PARTY"
+    ],
+    [
+      "ACQUISITION VI, LLC By",
+      "PARTY"
+    ],
+    [
+      "ACQUISITION VII, LLC By",
+      "PARTY"
+    ],
+    [
+      "ACQUISITION VIII, LLC By",
+      "PARTY"
+    ],
+    [
+      "ACQUISITION IX, LLC By",
+      "PARTY"
+    ],
+    [
+      "OPTION CARD, LLC By",
+      "PARTY"
+    ],
+    [
+      "New York",
+      "LOCATION"
+    ],
+    [
+      "USA",
+      "LOCATION"
+    ],
+    [
+      "RECOVERY SOLUTIONS LLC",
+      "PARTY"
+    ],
+    [
+      "Asta Funding Acquisition II",
+      "PARTY"
+    ],
+    [
+      "Palisades Acquisition II",
+      "PARTY"
+    ],
+    [
+      "Palisades Acquisition IV",
+      "PARTY"
+    ],
+    [
+      "Manager PALISADES ACQUISITION II",
+      "PARTY"
+    ],
+    [
+      "Manager PALISADES ACQUISITION IV",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning",
+  "processing_time": 0.066547,
+  "success": true,
+  "timestamp": "2026-01-07T16:00:06.555493"
+}

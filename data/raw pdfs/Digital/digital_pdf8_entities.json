@@ -1,0 +1,100 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf8.pdf",
+  "total_entities": 20,
+  "raw_entities_count": 493,
+  "removed_entities_count": 473,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "AGREEMENT_TYPE",
+    "DURATION",
+    "AMOUNT",
+    "PARTY",
+    "LOCATION"
+  ],
+  "entities": [
+    [
+      "RESTATED STOCK OPTION AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "LITHIUM CORPORATION, a",
+      "PARTY"
+    ],
+    [
+      "$100,000.",
+      "AMOUNT"
+    ],
+    [
+      "$100,000",
+      "AMOUNT"
+    ],
+    [
+      "Option Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "previous Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "NOW, THEREFORE",
+      "PARTY"
+    ],
+    [
+      "his death, by his",
+      "PARTY"
+    ],
+    [
+      "30 days",
+      "DURATION"
+    ],
+    [
+      "between LITHIUM CORPORATION",
+      "PARTY"
+    ],
+    [
+      "ENTIRE AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "separate agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "other agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Stockholders Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "similar agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "joinder agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "s agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "joinder agreement, signature",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "joinder agreement, signature pages",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "New York",
+      "LOCATION"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.334049,
+  "success": true,
+  "timestamp": ""
+}

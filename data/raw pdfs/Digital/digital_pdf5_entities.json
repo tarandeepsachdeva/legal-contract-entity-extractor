@@ -1,0 +1,92 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf5.pdf",
+  "total_entities": 18,
+  "raw_entities_count": 479,
+  "removed_entities_count": 461,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "AGREEMENT_TYPE",
+    "PARTY",
+    "EFFECTIVE_DATE",
+    "AMOUNT",
+    "DURATION"
+  ],
+  "entities": [
+    [
+      "EMPLOYMENT AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "$5,000,000",
+      "AMOUNT"
+    ],
+    [
+      "$420,000",
+      "AMOUNT"
+    ],
+    [
+      "$100,000",
+      "AMOUNT"
+    ],
+    [
+      "$300,000 during",
+      "AMOUNT"
+    ],
+    [
+      "$300,000",
+      "AMOUNT"
+    ],
+    [
+      "June 1, 2013",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "June 1, 2016",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "NOW, THEREFORE",
+      "PARTY"
+    ],
+    [
+      "Petroleum Management, LLC",
+      "PARTY"
+    ],
+    [
+      "AGREEMENT AGREEMENT, effective as",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "four months, by written",
+      "PARTY"
+    ],
+    [
+      "Board members, by reason",
+      "PARTY"
+    ],
+    [
+      "30 days",
+      "DURATION"
+    ],
+    [
+      "Synergy Resources Corporation",
+      "PARTY"
+    ],
+    [
+      "entire agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "prior agreements, arrangements",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "June 6, 2013",
+      "EFFECTIVE_DATE"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.248335,
+  "success": true,
+  "timestamp": ""
+}

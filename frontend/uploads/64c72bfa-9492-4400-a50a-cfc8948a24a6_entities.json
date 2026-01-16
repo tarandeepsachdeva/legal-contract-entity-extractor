@@ -1,0 +1,165 @@
+{
+  "source_file": "/Users/tarandeepsingh/Desktop/internship projects/Legal Contract Entity Extractor/frontend/uploads/64c72bfa-9492-4400-a50a-cfc8948a24a6.pdf",
+  "total_entities": 36,
+  "raw_entities_count": 3186,
+  "removed_entities_count": 3150,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "AMOUNT",
+    "AGREEMENT_TYPE",
+    "PARTY",
+    "LOCATION",
+    "EFFECTIVE_DATE",
+    "DURATION"
+  ],
+  "entities": [
+    [
+      "ALLIED MED, INC.",
+      "PARTY"
+    ],
+    [
+      "$1,152.00",
+      "AMOUNT"
+    ],
+    [
+      "$3,456.00",
+      "AMOUNT"
+    ],
+    [
+      "OCTOBER 1, 2005",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "OCTOBER 31, 2005",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "written agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "ALLIED MED, INC",
+      "PARTY"
+    ],
+    [
+      "release agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "a contract",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "$1,000,000",
+      "AMOUNT"
+    ],
+    [
+      "$2,500.00",
+      "AMOUNT"
+    ],
+    [
+      "$1,000",
+      "AMOUNT"
+    ],
+    [
+      "Insured contract",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "fact that, by reason",
+      "PARTY"
+    ],
+    [
+      "$100,000",
+      "AMOUNT"
+    ],
+    [
+      "$350.00",
+      "AMOUNT"
+    ],
+    [
+      "contemporaneous agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "disturbance agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "CREDIT LETTER",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "HAZARDOUS SUBSTANCES.",
+      "PARTY"
+    ],
+    [
+      "California",
+      "LOCATION"
+    ],
+    [
+      "ALEXICO, INC",
+      "PARTY"
+    ],
+    [
+      "California Corporation",
+      "PARTY"
+    ],
+    [
+      "SEPTEMBER 23, 2005",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "Lease Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "30 days",
+      "DURATION"
+    ],
+    [
+      "$200.00",
+      "AMOUNT"
+    ],
+    [
+      "an Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "FOUL, NOXIOUS",
+      "PARTY"
+    ],
+    [
+      "FOUL, NOXIOUS GAS",
+      "PARTY"
+    ],
+    [
+      "ALLIED MED INC.",
+      "PARTY"
+    ],
+    [
+      "$100.00",
+      "AMOUNT"
+    ],
+    [
+      "Jack Amin, President",
+      "PARTY"
+    ],
+    [
+      "Jack Amin, Vice",
+      "PARTY"
+    ],
+    [
+      "Lease Agreement, as well",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Jack Amin, Vice President",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 1.6226199999999997,
+  "success": true,
+  "timestamp": ""
+}

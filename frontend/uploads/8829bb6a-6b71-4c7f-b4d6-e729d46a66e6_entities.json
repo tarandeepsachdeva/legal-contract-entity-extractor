@@ -1,0 +1,43 @@
+{
+  "source_file": "/Users/tarandeepsingh/Desktop/internship projects/Legal Contract Entity Extractor/frontend/uploads/8829bb6a-6b71-4c7f-b4d6-e729d46a66e6.pdf",
+  "total_entities": 6,
+  "raw_entities_count": 112,
+  "removed_entities_count": 106,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "AGREEMENT_TYPE",
+    "PARTY",
+    "LOCATION",
+    "AMOUNT"
+  ],
+  "entities": [
+    [
+      "Florida",
+      "LOCATION"
+    ],
+    [
+      "$0.00",
+      "AMOUNT"
+    ],
+    [
+      "OPTION AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "S AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "SAGAMORE HOLDINGS, INC",
+      "PARTY"
+    ],
+    [
+      "Wood Avenue, Suite",
+      "LOCATION"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.053075,
+  "success": true,
+  "timestamp": "2026-01-16T23:36:18.617607"
+}

@@ -1,0 +1,148 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf22.pdf",
+  "total_entities": 33,
+  "entity_types": [
+    "AGREEMENT_TYPE",
+    "LOCATION",
+    "EFFECTIVE_DATE",
+    "PARTY"
+  ],
+  "entities": [
+    [
+      "November 30, 2004",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "November  30,  2004",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "March  7,  2003",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "DEVELOPMENT AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Development \nAgreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Development  Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Inyx  Pharma,   Ltd",
+      "LOCATION"
+    ],
+    [
+      "Stiefel \nLaboratories, Inc",
+      "LOCATION"
+    ],
+    [
+      "Handley, President",
+      "LOCATION"
+    ],
+    [
+      "STIEFEL LABORATORIES, INC",
+      "LOCATION"
+    ],
+    [
+      "Carr, Vice",
+      "LOCATION"
+    ],
+    [
+      "Acquisition, Testing",
+      "LOCATION"
+    ],
+    [
+      "of drugs, excipients",
+      "LOCATION"
+    ],
+    [
+      "and assistance, as",
+      "LOCATION"
+    ],
+    [
+      "necessary, in",
+      "LOCATION"
+    ],
+    [
+      "Assistance,   as",
+      "LOCATION"
+    ],
+    [
+      "necessary,   with",
+      "LOCATION"
+    ],
+    [
+      "Handley, President \n \n                                              STIEFEL",
+      "LOCATION"
+    ],
+    [
+      "Carr, Vice President",
+      "LOCATION"
+    ],
+    [
+      "Testing, and Evaluation",
+      "LOCATION"
+    ],
+    [
+      "excipients, and \n                  components",
+      "LOCATION"
+    ],
+    [
+      "and assistance, as necessary",
+      "LOCATION"
+    ],
+    [
+      "Assistance,   as  necessary",
+      "LOCATION"
+    ],
+    [
+      "OF DEVELOPMENT ACTIVITIES \n \nIV",
+      "PARTY"
+    ],
+    [
+      "to  that  certain",
+      "PARTY"
+    ],
+    [
+      "to the  Development",
+      "PARTY"
+    ],
+    [
+      "to add the",
+      "PARTY"
+    ],
+    [
+      "to \n                  facilitate production",
+      "PARTY"
+    ],
+    [
+      "to secure  health",
+      "PARTY"
+    ],
+    [
+      "to support health",
+      "PARTY"
+    ],
+    [
+      "to secure health",
+      "PARTY"
+    ],
+    [
+      "by both parties",
+      "PARTY"
+    ],
+    [
+      "by Inyx",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid",
+  "processing_time": 0.019797,
+  "success": true,
+  "timestamp": "2026-01-07T15:41:23.129145"
+}

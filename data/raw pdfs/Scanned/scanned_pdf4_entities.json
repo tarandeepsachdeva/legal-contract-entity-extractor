@@ -1,0 +1,48 @@
+{
+  "source_file": "data/raw pdfs/Scanned/scanned_pdf4.pdf",
+  "total_entities": 8,
+  "entity_types": [
+    "AMOUNT",
+    "PARTY",
+    "DURATION",
+    "AGREEMENT_TYPE"
+  ],
+  "entities": [
+    [
+      "SUBSCRIPTION AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "$5,000",
+      "AMOUNT"
+    ],
+    [
+      "one (",
+      "DURATION"
+    ],
+    [
+      "SUBSCRIPTION FOR UNITS EMPIRE GLOBAL",
+      "PARTY"
+    ],
+    [
+      "$1.00",
+      "AMOUNT"
+    ],
+    [
+      "this agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Global Corp",
+      "PARTY"
+    ],
+    [
+      "Empire Global Corp",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid",
+  "processing_time": 0.064465,
+  "success": true,
+  "timestamp": "2026-01-07T14:22:58.336567"
+}

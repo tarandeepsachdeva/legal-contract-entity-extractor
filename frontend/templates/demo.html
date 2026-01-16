@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Legal Contract Entity Extractor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .demo-info {
+            background: #e8f4fd;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .demo-info h3 {
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .results-title {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .results-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .entities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .entity-card {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s ease;
+        }
+
+        .entity-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .entity-type {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .entity-text {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .entity-type.PARTY { border-left-color: #28a745; }
+        .entity-type.PARTY .entity-type { color: #28a745; }
+        
+        .entity-type.AMOUNT { border-left-color: #ffc107; }
+        .entity-type.AMOUNT .entity-type { color: #ffc107; }
+        
+        .entity-type.EFFECTIVE_DATE { border-left-color: #17a2b8; }
+        .entity-type.EFFECTIVE_DATE .entity-type { color: #17a2b8; }
+        
+        .entity-type.DURATION { border-left-color: #fd7e14; }
+        .entity-type.DURATION .entity-type { color: #fd7e14; }
+        
+        .entity-type.LOCATION { border-left-color: #6f42c1; }
+        .entity-type.LOCATION .entity-type { color: #6f42c1; }
+        
+        .entity-type.AGREEMENT_TYPE { border-left-color: #e83e8c; }
+        .entity-type.AGREEMENT_TYPE .entity-type { color: #e83e8c; }
+
+        .back-button {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background: #5a6fd8;
+        }
+
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-card {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .results-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Demo Results</h1>
+            <p>Sample entity extraction from legal contract</p>
+        </div>
+
+        <div class="main-card">
+            <div class="demo-info">
+                <h3>📋 Sample Document</h3>
+                <p>This demo shows how our AI system extracts entities from a typical legal contract. The sample contains various entity types that our hybrid ML + Rules system can identify with high accuracy.</p>
+            </div>
+
+            <div class="results-header">
+                <div class="results-title">📊 Extracted Entities</div>
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">{{ data.total_entities }}</div>
+                        <div class="stat-label">Total Entities</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">{{ "%.3f"|format(data.processing_time) }}s</div>
+                        <div class="stat-label">Processing Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entities-grid">
+                {% for text, type in data.entities %}
+                <div class="entity-card entity-type {{ type }}">
+                    <div class="entity-type">{{ type }}</div>
+                    <div class="entity-text">{{ text }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="performance-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">86%</div>
+                    <div class="metric-label">Precision</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">77%</div>
+                    <div class="metric-label">Recall</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">82%</div>
+                    <div class="metric-label">F1 Score</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">32%</div>
+                    <div class="metric-label">Improvement vs ML Only</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/" class="back-button">🔙 Back to Upload</a>
+    </div>
+</body>
+</html>

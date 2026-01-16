@@ -1,0 +1,109 @@
+{
+  "source_file": "/Users/tarandeepsingh/Desktop/internship projects/Legal Contract Entity Extractor/frontend/uploads/aa0ece06-3fad-4739-af5e-1d053c6c20bd.pdf",
+  "total_entities": 22,
+  "raw_entities_count": 656,
+  "removed_entities_count": 634,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "AGREEMENT_TYPE",
+    "AMOUNT",
+    "EFFECTIVE_DATE",
+    "DURATION",
+    "PARTY",
+    "LOCATION"
+  ],
+  "entities": [
+    [
+      "December 31, 2008",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "TAGLICH BROTHERS, INC.",
+      "PARTY"
+    ],
+    [
+      "$0.01",
+      "AMOUNT"
+    ],
+    [
+      "December 31, 2015",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "TAGLICH BROTHERS, INC",
+      "PARTY"
+    ],
+    [
+      "Securities Dealers, Inc",
+      "PARTY"
+    ],
+    [
+      "$2.99",
+      "AMOUNT"
+    ],
+    [
+      "$10.00",
+      "AMOUNT"
+    ],
+    [
+      "10 days",
+      "DURATION"
+    ],
+    [
+      "8 days",
+      "DURATION"
+    ],
+    [
+      "$7.01",
+      "AMOUNT"
+    ],
+    [
+      "Entire Agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Industries Group, Inc",
+      "PARTY"
+    ],
+    [
+      "Bay Shore, New",
+      "LOCATION"
+    ],
+    [
+      "New York, New",
+      "LOCATION"
+    ],
+    [
+      "McGill, Esq",
+      "PARTY"
+    ],
+    [
+      "Bay Shore, New York",
+      "LOCATION"
+    ],
+    [
+      "New York, New York",
+      "LOCATION"
+    ],
+    [
+      "New York",
+      "LOCATION"
+    ],
+    [
+      "Air Industries Group",
+      "PARTY"
+    ],
+    [
+      "Taglich Brothers",
+      "PARTY"
+    ],
+    [
+      "December 31, 2013",
+      "EFFECTIVE_DATE"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.46157499999999996,
+  "success": true,
+  "timestamp": ""
+}

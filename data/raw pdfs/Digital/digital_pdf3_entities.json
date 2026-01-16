@@ -1,0 +1,105 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf3.pdf",
+  "total_entities": 21,
+  "raw_entities_count": 771,
+  "removed_entities_count": 750,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "LOCATION",
+    "PARTY",
+    "EFFECTIVE_DATE",
+    "DURATION",
+    "AMOUNT",
+    "AGREEMENT_TYPE"
+  ],
+  "entities": [
+    [
+      "JUNE 16, 2008",
+      "PARTY"
+    ],
+    [
+      "$2.00",
+      "AMOUNT"
+    ],
+    [
+      "$4,000",
+      "AMOUNT"
+    ],
+    [
+      "PURCHASE AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Master Fund, Ltd",
+      "PARTY"
+    ],
+    [
+      "Ingen Technologies, Inc",
+      "PARTY"
+    ],
+    [
+      "Purchase Agreement, dated",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "New York, New",
+      "LOCATION"
+    ],
+    [
+      "received, AJW Master",
+      "PARTY"
+    ],
+    [
+      "Purchase Agreement, dated June",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "New York, New York",
+      "LOCATION"
+    ],
+    [
+      "New York",
+      "LOCATION"
+    ],
+    [
+      "AJW Master Fund",
+      "PARTY"
+    ],
+    [
+      "CONSOLIDATION, MERGER",
+      "PARTY"
+    ],
+    [
+      "liquidating dividend, by way",
+      "PARTY"
+    ],
+    [
+      "30 days",
+      "DURATION"
+    ],
+    [
+      "indemnity agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "TRANSFER, EXCHANGE",
+      "PARTY"
+    ],
+    [
+      "FEES, INCURRED",
+      "PARTY"
+    ],
+    [
+      "$0.75",
+      "AMOUNT"
+    ],
+    [
+      "June 16, 2008",
+      "EFFECTIVE_DATE"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.38432700000000003,
+  "success": true,
+  "timestamp": ""
+}

@@ -1,0 +1,44 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf10.pdf",
+  "total_entities": 6,
+  "raw_entities_count": 111,
+  "removed_entities_count": 105,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "LOCATION",
+    "AGREEMENT_TYPE",
+    "AMOUNT",
+    "PARTY",
+    "EFFECTIVE_DATE"
+  ],
+  "entities": [
+    [
+      "September 17, 2004",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$0.00",
+      "AMOUNT"
+    ],
+    [
+      "OPTION AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "S AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "SAGAMORE HOLDINGS, INC",
+      "PARTY"
+    ],
+    [
+      "Wood Avenue, Suite",
+      "LOCATION"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.04592,
+  "success": true,
+  "timestamp": "2026-01-07T16:08:15.638299"
+}

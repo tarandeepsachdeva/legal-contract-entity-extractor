@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Contract Entity Extractor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 60px 20px;
+            text-align: center;
+            background: #f8f9ff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: #f0f2ff;
+        }
+
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background: #e8ebff;
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .upload-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .upload-subtext {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .processing {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .results-title {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .results-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .entities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .entity-card {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .entity-type {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .entity-text {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .entity-type.PARTY { border-left-color: #28a745; }
+        .entity-type.PARTY .entity-type { color: #28a745; }
+        
+        .entity-type.AMOUNT { border-left-color: #ffc107; }
+        .entity-type.AMOUNT .entity-type { color: #ffc107; }
+        
+        .entity-type.EFFECTIVE_DATE { border-left-color: #17a2b8; }
+        .entity-type.EFFECTIVE_DATE .entity-type { color: #17a2b8; }
+        
+        .entity-type.DURATION { border-left-color: #fd7e14; }
+        .entity-type.DURATION .entity-type { color: #fd7e14; }
+        
+        .entity-type.LOCATION { border-left-color: #6f42c1; }
+        .entity-type.LOCATION .entity-type { color: #6f42c1; }
+        
+        .entity-type.AGREEMENT_TYPE { border-left-color: #e83e8c; }
+        .entity-type.AGREEMENT_TYPE .entity-type { color: #e83e8c; }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+
+        .demo-button {
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: #218838;
+        }
+
+        .api-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .api-status.healthy {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .api-status.unhealthy {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-card {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .results-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="api-status" id="apiStatus">Checking API...</div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Legal Contract Entity Extractor</h1>
+            <p>AI-powered entity extraction for legal documents</p>
+        </div>
+
+        <div class="main-card">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop your PDF file here or click to browse</div>
+                <div class="upload-subtext">Supports both digital and scanned PDFs</div>
+                <input type="file" id="fileInput" accept=".pdf">
+            </div>
+
+            <div class="processing" id="processing">
+                <div class="spinner"></div>
+                <div class="upload-text">Processing your document...</div>
+                <div class="upload-subtext">Extracting entities using AI</div>
+            </div>
+
+            <div class="results" id="results">
+                <div class="results-header">
+                    <div class="results-title">📊 Extracted Entities</div>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalEntities">0</div>
+                            <div class="stat-label">Total Entities</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="processingTime">0s</div>
+                            <div class="stat-label">Processing Time</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="entities-grid" id="entitiesGrid"></div>
+            </div>
+
+            <button class="demo-button" onclick="window.location.href='/demo'">
+                🎯 View Demo Results
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // API Status Check
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                const statusEl = document.getElementById('apiStatus');
+                
+                if (data.status === 'healthy') {
+                    statusEl.className = 'api-status healthy';
+                    statusEl.textContent = '✅ API Healthy';
+                } else {
+                    statusEl.className = 'api-status unhealthy';
+                    statusEl.textContent = '❌ API Unhealthy';
+                }
+            } catch (error) {
+                const statusEl = document.getElementById('apiStatus');
+                statusEl.className = 'api-status unhealthy';
+                statusEl.textContent = '❌ API Unreachable';
+            }
+        }
+
+        // File Upload
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const processing = document.getElementById('processing');
+        const results = document.getElementById('results');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type === 'application/pdf') {
+                handleFileUpload(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+
+        async function handleFileUpload(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Show processing
+            uploadArea.style.display = 'none';
+            processing.style.display = 'block';
+            results.style.display = 'none';
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    displayResults(result);
+                } else {
+                    showError(result.error || 'Processing failed');
+                }
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                processing.style.display = 'none';
+            }
+        }
+
+        function displayResults(data) {
+            // Update stats
+            document.getElementById('totalEntities').textContent = data.total_entities;
+            document.getElementById('processingTime').textContent = (data.processing_time || 0).toFixed(3) + 's';
+
+            // Clear and populate entities
+            const grid = document.getElementById('entitiesGrid');
+            grid.innerHTML = '';
+
+            data.entities.forEach(([text, type]) => {
+                const card = document.createElement('div');
+                card.className = `entity-card entity-type ${type}`;
+                card.innerHTML = `
+                    <div class="entity-type">${type}</div>
+                    <div class="entity-text">${text}</div>
+                `;
+                grid.appendChild(card);
+            });
+
+            // Add download JSON button
+            const downloadButton = document.createElement('button');
+            downloadButton.className = 'demo-button';
+            downloadButton.textContent = '📄 Download JSON Results';
+            downloadButton.onclick = () => downloadJSON(data);
+            document.querySelector('.main-card').appendChild(downloadButton);
+
+            // Show results
+            results.style.display = 'block';
+        }
+
+        function downloadJSON(data) {
+            const jsonStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `entities_${data.filename.replace('.pdf', '')}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            
+            uploadArea.style.display = 'none';
+            processing.style.display = 'none';
+            results.style.display = 'none';
+            
+            document.querySelector('.main-card').appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+                uploadArea.style.display = 'block';
+            }, 5000);
+        }
+
+        // Check API status on load
+        checkAPIStatus();
+        setInterval(checkAPIStatus, 30000); // Check every 30 seconds
+    </script>
+</body>
+</html>

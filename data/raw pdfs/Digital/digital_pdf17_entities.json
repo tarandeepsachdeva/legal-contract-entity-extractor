@@ -1,0 +1,84 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf17.pdf",
+  "total_entities": 17,
+  "entity_types": [
+    "EFFECTIVE_DATE",
+    "PARTY",
+    "AGREEMENT_TYPE",
+    "AMOUNT"
+  ],
+  "entities": [
+    [
+      "July 11, 2006",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$100,000",
+      "AMOUNT"
+    ],
+    [
+      "TechStart Corp and Sarah",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$500,000",
+      "AMOUNT"
+    ],
+    [
+      "March 1,",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "$250,000",
+      "AMOUNT"
+    ],
+    [
+      "January 15, 2024",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "March 1, 2023",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "loan agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "facility agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Services agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "ABC Corp",
+      "PARTY"
+    ],
+    [
+      "TechStart Inc",
+      "PARTY"
+    ],
+    [
+      "Solutions Ltd",
+      "PARTY"
+    ],
+    [
+      "between ABC Corp",
+      "PARTY"
+    ],
+    [
+      "between TechStart Inc",
+      "PARTY"
+    ],
+    [
+      "Digital Solutions Ltd",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid",
+  "processing_time": 0.010496,
+  "success": true,
+  "timestamp": "2026-01-07T14:16:30.500229"
+}

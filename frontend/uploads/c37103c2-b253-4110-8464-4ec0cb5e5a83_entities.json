@@ -1,0 +1,63 @@
+{
+  "source_file": "/Users/tarandeepsingh/Desktop/internship projects/Legal Contract Entity Extractor/frontend/uploads/c37103c2-b253-4110-8464-4ec0cb5e5a83.pdf",
+  "total_entities": 11,
+  "raw_entities_count": 42,
+  "removed_entities_count": 31,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "PARTY",
+    "AGREEMENT_TYPE",
+    "AMOUNT",
+    "EFFECTIVE_DATE"
+  ],
+  "entities": [
+    [
+      "$0.01",
+      "AMOUNT"
+    ],
+    [
+      "March 26, 2020",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "FILING AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Charah Solutions, Inc",
+      "PARTY"
+    ],
+    [
+      "SERVICES UGP, LLC",
+      "PARTY"
+    ],
+    [
+      "Fund UGP, LLC",
+      "PARTY"
+    ],
+    [
+      "Aggregator GP, LLC",
+      "PARTY"
+    ],
+    [
+      "SERVICES UGP, LLC By",
+      "PARTY"
+    ],
+    [
+      "AGGREGATOR GP, LLC By",
+      "PARTY"
+    ],
+    [
+      "Signatory CHARAH HOLDINGS",
+      "PARTY"
+    ],
+    [
+      "GP LLC",
+      "PARTY"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.031393,
+  "success": true,
+  "timestamp": "2026-01-16T23:32:25.021351"
+}

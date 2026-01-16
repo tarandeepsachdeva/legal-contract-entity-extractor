@@ -1,0 +1,89 @@
+{
+  "source_file": "data/raw pdfs/Digital/digital_pdf4.pdf",
+  "total_entities": 17,
+  "raw_entities_count": 643,
+  "removed_entities_count": 626,
+  "expiration_dates_found": 0,
+  "entity_types": [
+    "LOCATION",
+    "DURATION",
+    "EFFECTIVE_DATE",
+    "AGREEMENT_TYPE",
+    "AMOUNT",
+    "PARTY"
+  ],
+  "entities": [
+    [
+      "EMPLOYMENT AGREEMENT",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "March 11, 2008",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "Signature Eyewear, Inc",
+      "PARTY"
+    ],
+    [
+      "NOW, THEREFORE",
+      "PARTY"
+    ],
+    [
+      "30 days",
+      "DURATION"
+    ],
+    [
+      "$120,000",
+      "AMOUNT"
+    ],
+    [
+      "$30,000",
+      "AMOUNT"
+    ],
+    [
+      "April 15, 2009",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "March 1, 2011",
+      "EFFECTIVE_DATE"
+    ],
+    [
+      "180 days",
+      "DURATION"
+    ],
+    [
+      "10 days",
+      "DURATION"
+    ],
+    [
+      "15 days",
+      "DURATION"
+    ],
+    [
+      "indemnification agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "implied agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "separate agreement",
+      "AGREEMENT_TYPE"
+    ],
+    [
+      "Street Inglewood, CA",
+      "LOCATION"
+    ],
+    [
+      "Entire Agreement",
+      "AGREEMENT_TYPE"
+    ]
+  ],
+  "processing_method": "hybrid_with_cleaning_and_filtering",
+  "processing_time": 0.28800899999999996,
+  "success": true,
+  "timestamp": ""
+}
