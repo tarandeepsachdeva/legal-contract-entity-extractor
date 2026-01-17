@@ -1,3 +1,5 @@
+the commits were added recently because of github account issue so pls ignore those commits.
+
 # Legal Contract Entity Extractor
 
 Complete pipeline for extracting entities from legal PDF documents using NER.
@@ -335,3 +337,4 @@ For issues:
 ---
 
 **Quick Start:** Run `./setup.sh` for automated setup and testing.
+    
